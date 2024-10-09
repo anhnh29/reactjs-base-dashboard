@@ -1,33 +1,30 @@
 {
-  "name": "antd-multi-dashboard",
+  "name": "react-base",
   "private": "false",
   "type": "module",
   "readme": "ERROR: No README data found!",
-  "_id": "antd-multi-dashboard@1.1.0",
+  "_id": "react-base@1.1.0",
   "version": "1.4.2",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "changeset": "changeset",
     "prettier:write": "prettier . --write",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@ant-design/charts": "^1.4.2",
     "@ant-design/colors": "^7.0.2",
     "@ant-design/icons": "^5.3.0",
-    "@changesets/cli": "^2.26.2",
     "@reduxjs/toolkit": "^2.2.3",
     "@tanem/react-nprogress": "^5.0.51",
     "antd": "^5.10.1",
+    "axios": "^1.7.7",
     "dayjs": "^1.11.9",
     "interactjs": "^1.10.18",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "react-redux": "^9.1.2",
@@ -38,7 +35,6 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
     "@types/lodash": "^4.14.197",
     "@types/react": "^18.2.15",
     "@types/react-calendar-timeline": "^0.28.2",
@@ -62,5 +58,5 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
 }
