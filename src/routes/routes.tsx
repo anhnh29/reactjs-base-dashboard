@@ -12,7 +12,6 @@ import {
   FmAccessPage,
   HomePage,
   SignInPage,
-  SignUpPage,
 } from '../pages';
 
 // Custom scroll restoration function
@@ -48,15 +47,8 @@ const PageWrapper = ({ children }: PageProps) => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <PageWrapper children={<GuestLayout />} />,
+    element: <PageWrapper children={<HomePage />} />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        path: '',
-        element: <HomePage />,
-      },
-    ],
   },
   {
     path: '/dashboards',
@@ -75,18 +67,19 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/auth',
+    path: '/signin',
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'signup',
-        element: <SignUpPage />,
-      },
-      {
-        path: 'signin',
-        element: <SignInPage />,
-      },
-    ],
+    element: <SignInPage />,
+  },
+  {
+    path: '/signup',
+    errorElement: <ErrorPage />,
+    element: <SignInPage />,
+  },
+  {
+    path: '/forgot-password',
+    errorElement: <ErrorPage />,
+    element: <SignInPage />,
   },
   {
     path: 'errors',

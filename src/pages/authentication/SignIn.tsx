@@ -2,7 +2,6 @@ import {
   Button,
   Checkbox,
   Col,
-  Divider,
   Flex,
   Form,
   Input,
@@ -11,16 +10,11 @@ import {
   theme,
   Typography,
 } from 'antd';
-import {
-  FacebookFilled,
-  GoogleOutlined,
-  TwitterOutlined,
-} from '@ant-design/icons';
-import { Logo } from '../../components';
-import { useMediaQuery } from 'react-responsive';
-import { PATH_AUTH, PATH_DASHBOARD } from '../../constants';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
+import { Logo } from '../../components';
+import { PATH_AUTH, PATH_DASHBOARD } from '../../constants';
 
 const { Title, Text, Link } = Typography;
 
@@ -147,17 +141,6 @@ export const SignInPage = () => {
               </Flex>
             </Form.Item>
           </Form>
-          <Divider className="m-0">or</Divider>
-          <Flex
-            vertical={isMobile}
-            gap="small"
-            wrap="wrap"
-            style={{ width: '100%' }}
-          >
-            <Button icon={<GoogleOutlined />}>Sign in with Google</Button>
-            <Button icon={<FacebookFilled />}>Sign in with Facebook</Button>
-            <Button icon={<TwitterOutlined />}>Sign in with Twitter</Button>
-          </Flex>
         </Flex>
       </Col>
     </Row>
