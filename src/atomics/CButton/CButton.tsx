@@ -4,13 +4,12 @@ import clsx from 'clsx';
 
 interface IProps extends ButtonProps {
   ctype: 'default' | 'primary' | 'outline';
-  status?: 'default' | 'disabled';
   fontStyle?: 'light' | 'bold';
-  text: string;
+  text?: string;
   loading?: boolean;
   csize?: 'lg' | 'md' | 'sm';
-  isCustom?: boolean;
-  disableCustomColor?: boolean;
+  disabled?: boolean;
+  children?: React.ReactNode;
 }
 
 const CButton = (props: IProps) => {
@@ -21,6 +20,9 @@ const CButton = (props: IProps) => {
     loading,
     className,
     fontStyle = 'bold',
+    disabled,
+    children,
+    ...prs
   } = props;
 
   const customClass = clsx(
@@ -30,10 +32,18 @@ const CButton = (props: IProps) => {
     classes[`button__${ctype}`],
     classes[`button__${fontStyle}`]
   );
+  console.log('customClass', prs);
   return (
-    <Button {...props} className={customClass} loading={loading} type="primary">
+    <Button
+      {...props}
+      className={customClass}
+      loading={loading}
+      type="primary"
+      disabled={disabled}
+    >
       <div className={classes.content}>
         <span>{text}</span>
+        {children}
       </div>
     </Button>
   );

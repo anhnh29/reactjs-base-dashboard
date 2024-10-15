@@ -5,15 +5,18 @@ import { useState } from 'react';
 import CModal from '../../atomics/CModal/CModal';
 import CTable from '../../atomics/CTable/CTable';
 import { TablePagination } from '../../types';
+import CButton from '../../atomics/CButton/CButton';
 
 export const HomePage = () => {
   const [open, setOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const handleChangePagination = (
     prevPagination: TablePagination,
-    currentPage: number
+    page: number
   ) => {
     // handle call api to get data
     console.log(prevPagination, currentPage);
+    setCurrentPage(page);
   };
   return (
     <div className={styles.layout}>
@@ -84,11 +87,13 @@ export const HomePage = () => {
           ]}
           pagination={{
             pageSize: 10,
-            current: 1,
+            current: currentPage,
             total: 188,
           }}
           onChangePagination={handleChangePagination}
         />
+        <CButton ctype="outline" text="button" />
+        <CButton ctype="primary" text="button" />
       </div>
     </div>
   );
